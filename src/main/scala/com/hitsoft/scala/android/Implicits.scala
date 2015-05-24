@@ -6,4 +6,8 @@ package com.hitsoft.scala.android
  * Time: 9:24
  */
 
-object Implicits extends ActivityImplicits with WidgetImplicits
+object Implicits
+  extends ActivityImplicits
+  with WidgetImplicits
+  with ContextImplicits
+  with BundleImplicits
