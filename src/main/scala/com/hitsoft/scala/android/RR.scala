@@ -1,5 +1,7 @@
 package com.hitsoft.scala.android
 
+import java.util.{ResourceBundle, Locale}
+
 import android.content.Context
 import android.text.{Spanned, Html}
 
@@ -11,4 +13,6 @@ import android.text.{Spanned, Html}
 object RR {
   def html(res: Seq[Int])(implicit ctx: Context) = Html.fromHtml(res.map(ctx.getResources.getString).mkString)
   def html(res: Int)(implicit ctx: Context): Spanned = html(Seq(res))
+  def string(res: Int)(implicit ctx: Context): String = ctx.getResources.getString(res)
+  def rb(locale: Locale) = ResourceBundle.getBundle("Message", locale)
 }
